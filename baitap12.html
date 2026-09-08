@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<title>Phiếu đăng ký tham gia chương trình khuyến mãi</title>
+	<style>
+		body { font: 12px Arial, sans-serif; margin: 4px; }
+		a { color: #00e; }
+		form {
+			width: 235px; margin: 10px 40px; padding: 8px;
+			border: 1px solid #888; background: #eee;
+		}
+		h3 { margin: 0 0 6px; color: #006400; font-size: 13px; text-align: center; }
+		table { width: 100%; border-collapse: collapse; background: #d9f3d0; }
+		td { border: 1px solid #9ab98f; padding: 2px; vertical-align: top; }
+		td:first-child { width: 82px; }
+		input[type="text"], input[type="tel"], select { width: 125px; box-sizing: border-box; font-size: 11px; }
+		input[type="number"] { width: 85px; font-size: 11px; }
+		select[multiple] { width: 125px; height: 68px; }
+		.center { text-align: center; padding-top: 6px; }
+		.message { color: #f00; font-size: 11px; }
+	</style>
+</head>
+<body>
+	<form id="registrationForm">
+		<h3>Phiếu đăng ký tham gia chương trình khuyến mãi</h3>
+		<table>
+			<tr><td>Họ và tên</td><td><input required type="text" name="name"></td></tr>
+			<tr><td>Địa chỉ</td><td><input required type="text" name="address"></td></tr>
+			<tr><td>Điện thoại</td><td><input required type="tel" name="phone"></td></tr>
+			<tr><td>Phái</td><td><label><input type="radio" name="gender" value="Nam" checked> Nam</label>
+				<label><input type="radio" name="gender" value="Nữ"> Nữ</label></td></tr>
+			<tr><td>Nghề nghiệp</td><td><select name="job">
+				<option>Giáo viên</option><option>Học sinh</option><option>Sinh viên</option><option>Khác</option>
+			</select></td></tr>
+			<tr><td>Chọn sản phẩm tham gia</td><td><select name="products" multiple>
+				<option>Kem đánh răng</option><option>Bột giặt</option><option>Dầu gội đầu</option><option>Sữa tắm</option>
+			</select></td></tr>
+			<tr><td>Số người dự đoán tham gia</td><td><input required type="number" name="guess" min="1"></td></tr>
+		</table>
+		<div class="center"><button type="submit">Đăng ký</button></div>
+		<div id="message" class="message"></div>
+	</form>
+
+	<script>
+		document.getElementById('registrationForm').addEventListener('submit', function (event) {
+			event.preventDefault();
+			document.getElementById('message').textContent = 'Bạn đã đăng ký thành công!!!';
+		});
+	</script>
+</body>
+</html>

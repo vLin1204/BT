@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng nhập</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f1f1f1;
+      font-family: Arial, sans-serif;
+    }
+
+    .login-box {
+      width: 360px;
+      border: 1px solid #7a7a7a;
+      background: #efefef;
+      padding: 18px 16px 14px;
+      box-shadow: 0 0 0 1px #d9d9d9;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    label {
+      width: 120px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    input {
+      flex: 1;
+      height: 28px;
+      padding: 4px 8px;
+      border: 1px solid #8b8b8b;
+      background: white;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+
+    button {
+      padding: 6px 18px;
+      border: 1px solid #666;
+      background: #e7e7e7;
+      cursor: pointer;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Đăng nhập</h2>
+    <form id="loginForm">
+      <div class="row">
+        <label for="username">Mã người dùng:</label>
+        <input type="text" id="username" name="username" value="anhlavodich" />
+      </div>
+      <div class="row">
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" name="password" value="bomaymaylatatca" />
+      </div>
+      <div class="btn-row">
+        <button type="submit">Đồng ý</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (username && password) {
+        alert('Đăng nhập thành công!');
+      } else {
+        alert('Vui lòng nhập đủ thông tin.');
+      }
+    });
+  </script>
+</body>
+</html>
